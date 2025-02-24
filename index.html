@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Project You</title>
+    <title>Tic-Tac-Toe</title>
 </head>
 
 <body>
@@ -64,6 +64,9 @@
     </div>
 
     <div class="result-banner" id="result-banner">
+        <div class="horizontal-line top"></div>
+        <div class="dotted-line top"></div>
+        <div class="dotted-border"></div>
         <div class="star" id="star">
             <img src="public/images/Star asset.png" alt="star-wins" class="star-wins">
             <h2 class="star-text" id="star-text">STAR WINS</h2>
@@ -73,7 +76,8 @@
             </div>
         </div>
         <div class="draw" id="draw">
-            <img src="public/images/Draw.png" alt="Draw" class="draw-match">
+            <img src="public/images/planet.png" alt="Draw" class="draw1-match">
+            <img src="public/images/Star asset.png" alt="Draw" class="draw2-match">
             <h2 class="draw-text" id="draw-text">IT'S DRAW</h2>
             <div class="buttons" id="buttons">
                 <img src="public/images/Nextround.png" alt="Nextround" class="next-round" id="next-round">
@@ -88,6 +92,8 @@
                 <img src="public/images/Restart.png" alt="Restart " class="restart" id="restart">
             </div>
         </div>
+        <div class="dotted-line bottom"></div>
+        <div class="horizontal-line bottom"></div>
     </div>
 
     <script src="script.js"></script>
