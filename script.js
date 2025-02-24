@@ -57,7 +57,7 @@ function handleMove(index, cell) {
   switchTurn();
 
   if (!isPlayerTurn) {
-    setTimeout(computerMove, 100);
+    setTimeout(computerMove, 500);
   }
 }
 
@@ -133,6 +133,7 @@ function endGame(winner) {
   resultBanner.style.display = "flex";
   resultBanner.style.justifyContent = "center";
   resultBanner.style.alignItems = "center";
+  resultBanner.style.alignContent = "center";
   resultBanner.style.position = "absolute";
   resultBanner.style.top = "50%";
   resultBanner.style.left = "50%";
@@ -167,7 +168,10 @@ function nextRound() {
   });
   console.log("Next round started");
   document.querySelector(".result-banner").style.display = "none";
-  resetBoard();
+
+  if (!isPlayerTurn) {
+    setTimeout(computerMove, 500);
+  }
 }
 
 function restartGame() {
@@ -183,6 +187,7 @@ function resetBoard() {
 
 function resetGame() {
   console.log("Refreshing entire game...");
+  resultBanner.style.display = "none";
 }
 
 function computerMove() {
