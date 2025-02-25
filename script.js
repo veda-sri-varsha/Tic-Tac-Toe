@@ -10,7 +10,7 @@ const scoreDisplays = document.querySelectorAll(".score");
 const restartButton = document.querySelector(".restart-btn");
 
 let board = ["", "", "", "", "", "", "", "", ""];
-let currentPlayer = "planet";
+let currentPlayer = "star";
 let scores = { star: 0, planet: 0 };
 let totalGames = 0;
 let isPlayerTurn = true;
@@ -187,7 +187,6 @@ function resetBoard() {
 
 function resetGame() {
   console.log("Refreshing entire game...");
-  resultBanner.style.display = "none";
 }
 
 function computerMove() {
