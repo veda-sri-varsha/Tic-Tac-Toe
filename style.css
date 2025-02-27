@@ -24,7 +24,7 @@ body {
 
 .game-container {
   aspect-ratio: 1;
-  background:#4f5c64;
+  background: #4f5c64;
   padding: 35px;
   border-radius: 20px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
@@ -35,7 +35,6 @@ body {
   justify-content: center;
   align-items: center;
   margin-left: 450px;
-  
 }
 
 .title {
@@ -148,7 +147,7 @@ body {
   font-size: 37px;
   width: 510px;
   height: 300px;
-  top: 430px;
+  top: 412px;
   left: 220px;
   border-radius: 0px 0px 40px 40px;
   margin-left: 450px;
@@ -371,7 +370,7 @@ h2 {
 }
 
 .star-text {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-weight: bold;
   font-size: 72px;
   line-height: 87.14px;
@@ -381,7 +380,7 @@ h2 {
 }
 
 .planet-text {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-weight: 800;
   font-size: 72px;
   line-height: 87.14px;
@@ -391,7 +390,7 @@ h2 {
 }
 
 .draw-text {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-weight: 800;
   font-size: 72px;
   line-height: 87.14px;
@@ -455,11 +454,7 @@ h2 {
 }
 
 .draw {
-  background: linear-gradient(
-      0deg,
-       #4f5d64,
-       #4f5d64
-    ),
+  background: linear-gradient(0deg, #4f5d64, #4f5d64),
     linear-gradient(
       90deg,
       rgba(0, 0, 0, 0.2) 0%,
@@ -490,13 +485,12 @@ h2 {
   }
 }
 
-@media screen and (max-width:768px) {
-
+@media screen and (max-width: 768px) {
   .restart-btn {
     margin: 10px auto;
     width: 100px;
     height: 20px;
-    margin-right:2px;
+    margin-right: 5px;
   }
 
   .title {
@@ -508,19 +502,20 @@ h2 {
     position: relative;
   }
 
-  .dot{
+  .dot {
     display: none;
   }
 
   .game-container {
-    width: auto;
-    height: auto;
     margin: 10px auto;
-    padding: 20px;
+    /* padding: 10px; */
     display: flex;
     flex-direction: column;
     align-content: center;
     aspect-ratio: 1;
+    width: 100%;
+    height: 100%;
+    position: relative;
   }
 
   .game-board {
@@ -528,27 +523,39 @@ h2 {
     grid-template-columns: repeat(3, 1fr);
     padding: 10px;
     width: auto;
-    height:auto;
+    height: auto;
+    position: absolute;
   }
 
   .cell {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    object-fit: contain;
+    opacity: 1;
+    justify-content: center;
+    align-items: center;
   }
 
   .score-display {
     width: 100%;
-    height: auto;
+    height: 100%;
     font-size: 24px;
     flex-direction: column;
     margin: 10px auto;
     align-content: center;
     justify-content: center;
+    position: relative;
+    top: 15px;
   }
 
   .score-item {
     flex-direction: row;
-    gap: 10px;
+    justify-content: center;
+    align-items: center;
   }
 
   .icon {
@@ -572,6 +579,7 @@ h2 {
     text-align: center;
     justify-content: center;
     align-content: center;
+    align-items: center;
   }
 
   .horizontal-line,
@@ -579,12 +587,36 @@ h2 {
     width: 90%;
   }
 
+  .star {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    justify-content: center;
+  }
+
+  .planet {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    justify-content: center;
+  }
+
+  .draw {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    justify-content: center;
+  }
+
   .star-wins,
   .planet-wins,
   .draw1-match,
   .draw2-match {
     width: 100px;
-    height: auto;
+    height: 100px;
     top: auto;
     left: auto;
     margin: 10px auto;
@@ -593,11 +625,12 @@ h2 {
   h2 {
     font-size: 36px;
     width: auto;
-    text-align: center;
+    height: auto;
+    /* text-align: center; */
+    justify-content: center;
   }
 
   .buttons {
-    width: 100%;
     flex-direction: column;
     gap: 10px;
     align-items: center;
