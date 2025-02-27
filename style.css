@@ -9,7 +9,9 @@ body {
   height: auto;
   /* background: #ecd6a9; */
   background: #eed3a3;
-  /* overflow-y: hidden; */
+  overflow-y: hidden;
+  justify-content: center;
+  /* align-items: center; */
 }
 
 .restart-btn {
@@ -22,8 +24,8 @@ body {
 
 .game-container {
   aspect-ratio: 1;
-  background: var(--Gray-900, #4f5d64);
-  padding: 30px;
+  background:#4f5c64;
+  padding: 35px;
   border-radius: 20px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   position: relative;
@@ -33,6 +35,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-left: 450px;
+  
 }
 
 .title {
@@ -368,7 +371,7 @@ h2 {
 }
 
 .star-text {
-  font-family: Inter;
+  font-family: 'Inter';
   font-weight: bold;
   font-size: 72px;
   line-height: 87.14px;
@@ -378,7 +381,7 @@ h2 {
 }
 
 .planet-text {
-  font-family: Inter;
+  font-family: 'Inter';
   font-weight: 800;
   font-size: 72px;
   line-height: 87.14px;
@@ -388,7 +391,7 @@ h2 {
 }
 
 .draw-text {
-  font-family: Inter;
+  font-family: 'Inter';
   font-weight: 800;
   font-size: 72px;
   line-height: 87.14px;
@@ -454,8 +457,8 @@ h2 {
 .draw {
   background: linear-gradient(
       0deg,
-      var(--Gray-900, #4f5d64),
-      var(--Gray-900, #4f5d64)
+       #4f5d64,
+       #4f5d64
     ),
     linear-gradient(
       90deg,
@@ -487,9 +490,122 @@ h2 {
   }
 }
 
-@media screen and (max-width: 768px) {
-  body {
-    align-items: center;
+@media screen and (max-width:368px) {
+
+  .restart-btn {
+    margin: 10px auto;
+    width: 100px;
+    height: 20px;
+    margin-right:2px;
+  }
+
+  .title {
+    font-size: 20px;
+    /* margin: auto; */
+    display: flex;
     justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .dot{
+    display: none;
+  }
+
+  .game-container {
+    width: 90%;
+    height: auto;
+    margin: 10px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    aspect-ratio: 1;
+  }
+
+  .game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px;
+    width: 100%;
+    height:auto;
+  }
+
+  .cell {
+    width: 80px;
+    height: 80px;
+  }
+
+  .score-display {
+    width: 100%;
+    height: auto;
+    font-size: 24px;
+    flex-direction: column;
+    margin: 10px auto;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .score-item {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .icon img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .reset-button {
+    width: 60px;
+    height: 60px;
+  }
+
+  .result-banner {
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .horizontal-line,
+  .dotted-line {
+    width: 90%;
+  }
+
+  .star-wins,
+  .planet-wins,
+  .draw1-match,
+  .draw2-match {
+    width: 100px;
+    height: auto;
+    top: auto;
+    left: auto;
+    margin: 10px auto;
+  }
+
+  h2 {
+    font-size: 36px;
+    width: auto;
+    text-align: center;
+  }
+
+  .buttons {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .star-text,
+  .planet-text,
+  .draw-text {
+    font-size: 36px;
   }
 }
