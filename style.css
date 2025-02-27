@@ -586,6 +586,7 @@ h2 {
   .horizontal-line,
   .dotted-line {
     width: 90%;
+    display:none;
   }
 
   .star {
