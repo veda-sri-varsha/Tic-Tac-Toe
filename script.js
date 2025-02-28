@@ -112,12 +112,16 @@ function endGame(winner) {
   gameover.play();
   console.log(winner);
 
+  document.querySelector(".game-container").style.display = "none"; 
+    document.querySelector(".score-display").style.display = "none";
+    document.querySelector(".restart-btn").style.display = "none"; 
+
   document.querySelector(".star").style.display = "none";
   document.querySelector(".draw").style.display = "none";
   document.querySelector(".planet").style.display = "none";
 
   let resultBanner = document.querySelector(".result-banner");
-  let resultText;
+
 
   if (winner === "Star Wins!") {
     document.querySelector(".star").style.display = "flex";
@@ -138,6 +142,8 @@ function endGame(winner) {
   resultBanner.style.top = "50%";
   resultBanner.style.left = "50%";
   resultBanner.style.transform = "translate(-50%, -50%)";
+
+  document.body.style.backgroundColor = "black";
 
   isPlayerTurn = false;
 }
@@ -172,6 +178,8 @@ function nextRound() {
   if (!isPlayerTurn) {
     setTimeout(computerMove, 500);
   }
+
+  document.body.style.backgroundColor = ""; 
 }
 
 function restartGame() {
@@ -179,6 +187,8 @@ function restartGame() {
   document.querySelector(".result-banner").style.display = "none";
   location.reload();
   resetGame();
+
+  document.body.style.backgroundColor = ""; 
 }
 
 function resetBoard() {
@@ -256,6 +266,7 @@ function updateScore() {
   scoreDisplays[0].textContent = `${scores.planet}/${totalGames}`;
   scoreDisplays[1].textContent = `${scores.star}/${totalGames}`;
 }
+
 
 function resetGame() {
   board = ["", "", "", "", "", "", "", "", ""];
