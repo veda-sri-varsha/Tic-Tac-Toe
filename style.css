@@ -18,7 +18,7 @@ body {
   display: flex;
   width: 128px;
   height: 24px;
-  margin: 10px 10px 10px 815px;
+  margin: 30px 10px 10px 800px;
   cursor: pointer;
 }
 
@@ -28,13 +28,15 @@ body {
   padding: 35px;
   border-radius: 20px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  position: relative;
-  width: 470px;
-  height: 470px;
-  display: flexbox;
+  position: absolute;
+  width: 425px;
+  height: 425px;
+  display: block;
   justify-content: center;
   align-items: center;
-  margin-left: 450px;
+  margin-left: 470px;
+  align-content: center;
+  top: 10%;
 }
 
 .title {
@@ -42,7 +44,7 @@ body {
   justify-content: center;
   align-items: center;
   color: #eed3a3;
-  margin-top: -15px;
+  margin-top: -20px;
 }
 
 .word {
@@ -52,7 +54,7 @@ body {
 .game-board {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding: 5px;
+  padding: 20px;
   border: 10px;
   border-radius: 10px;
   background: linear-gradient(222.53deg, #d6c890 3.36%, #d1c4b3 95.72%);
@@ -99,20 +101,20 @@ body {
 }
 
 .top-right {
-  top: -40px;
-  right: -390px;
+  top: -42px;
+  right: -337px;
   transform: translate(50%, -50%);
 }
 
 .bottom-left {
-  bottom: -320px;
+  bottom: -270px;
   left: -17px;
   transform: translate(-50%, 50%);
 }
 
 .bottom-right {
-  bottom: -290px;
-  right: -387px;
+  bottom: -235px;
+  right: -335px;
   transform: translate(50%, 50%);
 }
 
@@ -120,8 +122,6 @@ body {
   position: relative;
   width: 129px;
   height: 4px;
-  /* top: 8px;
-  left: 2px; */
   transform: rotate(-90deg);
   z-index: 1;
 }
@@ -147,7 +147,7 @@ body {
   font-size: 37px;
   width: 510px;
   height: 300px;
-  top: 412px;
+  top: 415px;
   left: 220px;
   border-radius: 0px 0px 40px 40px;
   margin-left: 450px;
@@ -244,10 +244,26 @@ body {
   animation: shake 0.3s ease-in-out;
 }
 
+.vs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 20px;
+  margin-top: 97px;
+  position: absolute;
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29.05px;
+  letter-spacing: 40%;
+  text-align: center;
+}
+
+
 .result-banner {
   width: 1240px;
   height: 371px;
-  top: 839px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -257,7 +273,11 @@ body {
   cursor: pointer;
   transform: translate(-50%, -50%);
   z-index: 1;
-  animation: fadeInBanner 0.5s ease-in-out;
+  animation: fadeInBanner 1s ease-out;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+  margin-top: -30px;
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.95);
 }
 
 .horizontal-line {
@@ -316,7 +336,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  border: 2px solid var(--Gray-600, #828c90);
+  border: 2px solid #828c90;
   border-radius: 15px;
   margin: 15px;
   pointer-events: none;
@@ -396,7 +416,7 @@ h2 {
   line-height: 87.14px;
   letter-spacing: 20%;
   text-align: center;
-  color: var(--O-Color-500, #e9b98b);
+  color: #e9b98b;
 }
 
 .buttons {
@@ -473,19 +493,27 @@ h2 {
 @keyframes fadeInBanner {
   0% {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0.7);
+    transform: translate(-50%, -55%) scale(0.8);
   }
-  60% {
+  50% {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1.05);
   }
   100% {
-    opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
 }
 
 @media screen and (max-width: 768px) {
+  body {
+    width: 100%;
+    height: 100%;
+    background: #eed3a3;
+    overflow-x: hidden;
+    justify-content: center;
+    align-items: center;
+  }
+
   .restart-btn {
     margin: 10px auto;
     width: 100px;
@@ -502,29 +530,31 @@ h2 {
     position: relative;
   }
 
+  .word {
+    justify-content: space-evenly;
+  }
+
   .dot {
     display: none;
   }
 
   .game-container {
     margin: 10px auto;
-    /* padding: 10px; */
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-content: center;
     aspect-ratio: 1;
-    width: 100%;
-    height: 100%;
     position: relative;
+    width: 375px;
+    height: 375px;
+    border-radius: 10px;
   }
 
   .game-board {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: 10px;
-    width: auto;
-    height: auto;
-    position: absolute;
+    padding: 15px;
   }
 
   .cell {
@@ -550,12 +580,25 @@ h2 {
     justify-content: center;
     position: relative;
     top: 15px;
+    padding: 10px;
   }
 
   .score-item {
+    display: flex;
     flex-direction: row;
+    align-items: center;
+    align-content: center;
+    margin-left: -50px;
+  }
+
+  .vs {
+    display: flex;
     justify-content: center;
     align-items: center;
+    width: 38px;
+    height: 29px;
+    top: 237px;
+    left: 242px;
   }
 
   .icon {
@@ -575,18 +618,20 @@ h2 {
 
   .result-banner {
     width: 100%;
-    height: 50%;
+    height: 37%;
     text-align: center;
     justify-content: center;
     align-content: center;
     align-items: center;
     position: relative;
+    margin-top: -100px;
+    animation: fadeInBanner 1s ease-out;
   }
 
   .horizontal-line,
   .dotted-line {
     width: 90%;
-    display:none;
+    display: none;
   }
 
   .star {
@@ -642,6 +687,7 @@ h2 {
     justify-content: center;
     position: absolute;
     margin-left: -250px;
+    margin-top: -75px;
   }
 
   .star-text,
