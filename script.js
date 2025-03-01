@@ -143,7 +143,7 @@ function endGame(winner) {
   resultBanner.style.left = "50%";
   resultBanner.style.transform = "translate(-50%, -50%)";
 
-  document.body.style.backgroundColor = "black";
+  document.body.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
 
   isPlayerTurn = false;
 }
@@ -180,6 +180,11 @@ function nextRound() {
   }
 
   document.body.style.backgroundColor = ""; 
+
+  document.querySelector(".game-container").style.display = "block";
+  document.querySelector(".score-display").style.display = "flex";
+  document.querySelector(".restart-btn").style.display = "flex";
+
 }
 
 function restartGame() {
