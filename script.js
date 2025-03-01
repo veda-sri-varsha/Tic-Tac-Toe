@@ -142,7 +142,14 @@ function endGame(winner) {
   resultBanner.style.left = "50%";
   resultBanner.style.transform = "translate(-50%, -50%)";
 
+
+  if(winner === "Star Wins!") {
   document.body.style.background = "rgba(71, 81, 84, 1)";
+  } else if(winner === "Planet Wins!") {
+  document.body.style.background = "rgba(124, 105, 87, 1)";
+  } else if(winner === "It's a Draw!") {    
+  document.body.style.background = "rgba(129, 129, 129, 1)";
+  }
 
 
   isPlayerTurn = false;
