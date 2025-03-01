@@ -655,7 +655,7 @@ h2 {
 
   .result-banner {
     width: 100%;
-    height: 37%;
+    height: 25%;
     text-align: center;
     justify-content: center;
     align-content: center;
@@ -740,7 +740,7 @@ h2 {
     justify-content: center;
     position: absolute;
     margin-left: -250px;
-    margin-top: -75px;
+    margin-top: -140px;
   }
 
   .star-text,
