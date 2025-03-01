@@ -274,20 +274,16 @@ body {
 }
 
 .loser {
-  /* Hollow */
-
   position: absolute;
   width: 134px;
   height: 134px;
   left: 61px;
   top: 60px;
-
   background: #ece5d5;
   box-shadow: inset -2px 2px 1px rgba(129, 113, 99, 0.4),
     inset -6px 6px 20px 2px rgba(173, 160, 142, 0.8),
     inset 6px -6px 7px 1px rgba(251, 250, 239, 0.9);
   border-radius: 4px;
-
   opacity: 0.2;
 }
 
@@ -304,10 +300,16 @@ body {
   transform: translate(-50%, -50%);
   z-index: 1;
   animation: fadeInBanner 1s ease-out;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 5px 15px rgba(71, 70, 70, 0.15);
   margin-top: -30px;
   backdrop-filter: blur(20px);
-  background: rgba(255, 255, 255, 0.95);
+  /* background: rgba(255, 255, 255, 0.95); */
+  background: linear-gradient(0deg, #818181, #818181),
+    radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
 }
 
 .horizontal-line {
@@ -543,6 +545,7 @@ h2 {
     overflow-x: hidden;
     justify-content: center;
     align-items: center;
+    overflow-y: hidden;
   }
 
   .restart-btn {
@@ -571,21 +574,21 @@ h2 {
 
   .game-container {
     margin: 10px auto;
-    padding: 10px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-content: center;
     aspect-ratio: 1;
     position: relative;
-    width: 375px;
-    height: 375px;
+    width: 365px;
+    height: 365px;
     border-radius: 10px;
   }
 
   .game-board {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: 15px;
+    padding: 10px;
   }
 
   .cell {
@@ -735,4 +738,9 @@ h2 {
     margin-top: -100px;
     margin-left: -720px;
   }
+
+  .highlight{
+    background: none;
+  }
+
 }
