@@ -142,7 +142,7 @@ function endGame(winner) {
   resultBanner.style.left = "50%";
   resultBanner.style.transform = "translate(-50%, -50%)";
 
-  document.body.style.background = "rgb(0, 0, 0)";
+  document.body.style.background = "rgba(71, 81, 84, 1)";
 
 
   isPlayerTurn = false;
