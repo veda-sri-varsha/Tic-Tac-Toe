@@ -553,8 +553,8 @@ h2 {
     width: 100px;
     height: 20px;
     /* margin-right: 5px; */
-    margin-top:  65px;
-    margin-left: 270px;
+    margin-top:  45px;
+    margin-left: 275px;
   }
 
   .title {
@@ -585,7 +585,7 @@ h2 {
     width: 365px;
     height: 365px;
     border-radius: 10px;
-    margin-top: 50px;
+    margin-top: 40px;
   }
 
   .game-board {
