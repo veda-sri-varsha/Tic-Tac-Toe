@@ -271,10 +271,23 @@ body {
   border-bottom-right-radius: 30px;
   border-bottom-left-radius: 30px;
   background-color: #a8d0e6;
- 
 }
 
 .loser {
+  /* Hollow */
+
+  position: absolute;
+  width: 134px;
+  height: 134px;
+  left: 61px;
+  top: 60px;
+
+  background: #ece5d5;
+  box-shadow: inset -2px 2px 1px rgba(129, 113, 99, 0.4),
+    inset -6px 6px 20px 2px rgba(173, 160, 142, 0.8),
+    inset 6px -6px 7px 1px rgba(251, 250, 239, 0.9);
+  border-radius: 4px;
+
   opacity: 0.2;
 }
 
@@ -310,15 +323,16 @@ body {
     transparent 85%,
     transparent 100%
   );
+  justify-content: center;
 }
 
 .horizontal-line.top {
-  top: 10px;
+  top: -20px;
   width: 80%;
 }
 
 .horizontal-line.bottom {
-  bottom: 25px;
+  bottom: -9px;
 }
 
 .dotted-line {
@@ -339,11 +353,11 @@ body {
 }
 
 .dotted-line.top {
-  top: 25px;
+  top: -7px;
 }
 
 .dotted-line.bottom {
-  bottom: 10px;
+  bottom: -20px;
   width: 75%;
 }
 
@@ -369,27 +383,27 @@ body {
 }
 
 .planet-wins {
-  width: 277.7805480957031px;
-  height: 265.6343994140625px;
-  top: -137.27px;
-  left: 489.7px;
+  width: 250px;
+  height: 250px;
+  top: -110.27px;
+  left: 480.7px;
   position: absolute;
 }
 
 .draw1-match {
   display: flex;
-  width: 277.7805480957031px;
-  height: 265.6343994140625px;
-  top: -100px;
+  width: 260px;
+  height: 250;
+  top: -120px;
   left: 351px;
   position: absolute;
 }
 
 .draw2-match {
   display: flex;
-  width: 277.7805480957031px;
-  height: 265.6343994140625px;
-  top: -100px;
+  width: 250px;
+  height: 250px;
+  top: -120px;
   left: 629px;
   position: absolute;
 }
