@@ -151,6 +151,7 @@ body {
   left: 220px;
   border-radius: 0px 0px 40px 40px;
   margin-left: 450px;
+  font-family: sans-serif;
 }
 
 .score-item {
@@ -160,7 +161,10 @@ body {
 }
 
 .score {
-  color: #283135;
+  font-size: 24px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-top: 10px;
   transition: color 0.3s ease-in-out;
 }
 
@@ -260,6 +264,19 @@ body {
   text-align: center;
 }
 
+.highlight {
+  width: 117px;
+  height: 150px;
+  left: 325px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  background-color: #a8d0e6;
+ 
+}
+
+.loser {
+  opacity: 0.2;
+}
 
 .result-banner {
   width: 1240px;
