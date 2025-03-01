@@ -112,16 +112,15 @@ function endGame(winner) {
   gameover.play();
   console.log(winner);
 
-  document.querySelector(".game-container").style.display = "none"; 
-    document.querySelector(".score-display").style.display = "none";
-    document.querySelector(".restart-btn").style.display = "none"; 
+  document.querySelector(".game-container").style.display = "none";
+  document.querySelector(".score-display").style.display = "none";
+  document.querySelector(".restart-btn").style.display = "none";
 
   document.querySelector(".star").style.display = "none";
   document.querySelector(".draw").style.display = "none";
   document.querySelector(".planet").style.display = "none";
 
   let resultBanner = document.querySelector(".result-banner");
-
 
   if (winner === "Star Wins!") {
     document.querySelector(".star").style.display = "flex";
@@ -143,7 +142,8 @@ function endGame(winner) {
   resultBanner.style.left = "50%";
   resultBanner.style.transform = "translate(-50%, -50%)";
 
-  document.body.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+  document.body.style.background = "rgb(0, 0, 0)";
+
 
   isPlayerTurn = false;
 }
@@ -179,12 +179,11 @@ function nextRound() {
     setTimeout(computerMove, 500);
   }
 
-  document.body.style.backgroundColor = ""; 
+  document.body.style.backgroundColor = "";
 
   document.querySelector(".game-container").style.display = "block";
   document.querySelector(".score-display").style.display = "flex";
   document.querySelector(".restart-btn").style.display = "flex";
-
 }
 
 function restartGame() {
@@ -193,7 +192,7 @@ function restartGame() {
   location.reload();
   resetGame();
 
-  document.body.style.backgroundColor = ""; 
+  document.body.style.backgroundColor = "";
 }
 
 function resetBoard() {
@@ -268,8 +267,27 @@ function findBestMove() {
 }
 
 function updateScore() {
+  let scoreDisplays = document.querySelectorAll(".score");
+
   scoreDisplays[0].textContent = `${scores.planet}/${totalGames}`;
   scoreDisplays[1].textContent = `${scores.star}/${totalGames}`;
+
+  let planetIcon = document.querySelector(".planet-icon");
+  let starIcon = document.querySelector(".star-icon");
+  let resultBanner = document.querySelector(".result-banner");
+
+  planetIcon.classList.remove("highlight", "loser");
+  starIcon.classList.remove("highlight", "loser");
+
+  let resultScore = parseInt(resultBanner.textContent) || 0;
+
+  if (scores.planet === resultScore && scores.planet !== scores.star) {
+    planetIcon.classList.add("highlight");
+    // starIcon.classList.add("loser");
+  } else if (scores.star === resultScore && scores.planet !== scores.star) {
+    starIcon.classList.add("highlight");
+    // planetIcon.classList.add("loser");
+  }
 }
 
 
